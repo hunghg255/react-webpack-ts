@@ -1,0 +1,3 @@
+interface ITodoItem {
+  title: string;
+}
