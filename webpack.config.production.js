@@ -1,11 +1,19 @@
-const config = require('./webpack.config.js')
+const config = require('./webpack.config.js');
 
-config.mode = 'production'
+config.mode = 'production';
 
 config.optimization = {
+  moduleIds: 'hashed',
   splitChunks: {
-    chunks: 'all'
-  }
-}
+    cacheGroups: {
+      vendor: {
+        test: /[\\/]node_modules[\\/]/,
+        name: 'vendors',
+        chunks: 'all',
+      },
+    },
+  },
+  runtimeChunk: 'single',
+};
 
-module.exports = config
+module.exports = config;

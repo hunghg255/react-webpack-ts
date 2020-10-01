@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 require('@babel/register');
 
@@ -7,7 +8,7 @@ const config = {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: 'js/bundle.[hash].min.js',
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
@@ -47,6 +48,7 @@ const config = {
   },
 
   plugins: [
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html',
