@@ -7,7 +7,7 @@ require('@babel/register');
 module.exports = (env) => {
   const isDev = env.MODE === 'DEV' ? true : false;
   return {
-    mode: 'development',
+    mode: isDev ? 'development' : 'production',
     entry: './src/index.tsx',
     output: {
       filename: 'js/bundle.[hash].min.js',
