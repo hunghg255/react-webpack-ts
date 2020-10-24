@@ -5,11 +5,11 @@
       "es6",
       "dom"
     ],
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "allowJs": true,
     "jsx": "react",
-    "outDir": "./dist",
+    // "outDir": "./dist",
     "rootDir": "./",
     "isolatedModules": true,
     "strict": true,
@@ -21,5 +21,5 @@
     "sourceMap": true,
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "build"]
 }
