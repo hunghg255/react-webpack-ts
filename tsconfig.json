@@ -14,7 +14,11 @@
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "node",
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+    },
     "typeRoots": ["node_modules/@types", "src/typings"],
     "esModuleInterop": true,
     "noImplicitAny": false,
